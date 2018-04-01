@@ -25734,11 +25734,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarek Shahin\\source\\repos\\PublicTrApphic\\PublicTrApphic\\PublicTrApphic.csproj",
+      "projectUniqueName": "C:\\Users\\Tarek Shahin\\Desktop\\projekat ooad\\gradskisaobracajusecase\\PublicTrApphic\\PublicTrApphic\\PublicTrApphic.csproj",
       "projectName": "PublicTrApphic",
-      "projectPath": "C:\\Users\\Tarek Shahin\\source\\repos\\PublicTrApphic\\PublicTrApphic\\PublicTrApphic.csproj",
+      "projectPath": "C:\\Users\\Tarek Shahin\\Desktop\\projekat ooad\\gradskisaobracajusecase\\PublicTrApphic\\PublicTrApphic\\PublicTrApphic.csproj",
       "packagesPath": "C:\\Users\\Tarek Shahin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarek Shahin\\source\\repos\\PublicTrApphic\\PublicTrApphic\\obj\\",
+      "outputPath": "C:\\Users\\Tarek Shahin\\Desktop\\projekat ooad\\gradskisaobracajusecase\\PublicTrApphic\\PublicTrApphic\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -25763,7 +25763,7 @@
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
-            "version": "[6.0.1, )"
+            "version": "6.0.1"
           }
         }
       }

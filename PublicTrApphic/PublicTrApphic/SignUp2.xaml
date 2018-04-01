@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="PublicTrApphic.SignUp2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PublicTrApphic"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF4490DC">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="626"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Image Source="Assets/dalje.png" Margin="15,-14,250,498" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="180"/>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="122,17,-30,0" Text="UNOS PODATAKA" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="268" FontWeight="Bold" FontFamily="Cooper Std Black" Foreground="#FFFF0606"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,114,-43,0" Text="Unesi broj mobitela:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" FontWeight="Bold" FontFamily="Cooper Std Black" Foreground="#FFFFDD06"/>
+        <Button Content="1" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,153,0,0" VerticalAlignment="Top" Height="48" Width="44" Background="#FF050505" Foreground="#FFFDFBFB" FontWeight="Bold"/>
+        <Button Content="2" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,153,0,0" VerticalAlignment="Top" Height="48" Width="44" Background="#FF070707" Foreground="#FFFDFBFB" FontWeight="Bold"/>
+        <Button Content="3" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,153,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB"/>
+        <Button Content="4" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFDFBFB"/>
+        <Button Content="5" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFDFBFB"/>
+        <Button Content="6" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFBF9F9"/>
+        <Button Content="7" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB"/>
+        <Button Content="8" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB"/>
+        <Button Content="9" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB"/>
+        <Button Content="0" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,342,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB"/>
+        <Button Content="Del" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,342,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFBF9F9"/>
+        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="135,341,0,0" Text="" VerticalAlignment="Top" Height="50" Width="206" FontSize="30" Background="#FFFDFBFB" FontWeight="Bold" FontStyle="Italic"/>
+        <Image HorizontalAlignment="Left" Height="114" Grid.Row="0" Grid.Column="0" Margin="60,404,0,0" VerticalAlignment="Top" Width="230" Visibility="Visible"/>
+        <Button Content="Slika lične.." HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="130,533,0,0" VerticalAlignment="Top" FontSize="15" Background="#FFB1B1B1" Height="35" Width="89"/>
+        <Button Content="SIGN UP" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="220,578,0,0" FontSize="25" VerticalAlignment="Top" Height="50" Width="117" Background="#FFACACAC" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="116" Grid.Row="0" Grid.Column="0" Margin="60,404,0,0" VerticalAlignment="Top" Width="233" Stroke="#FF040404" FocusVisualSecondaryBrush="#FF030303" StrokeThickness="5"/>
+
+    </Grid>
+</Page>

@@ -7,7 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#FF4490DC">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="626"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="Assets/logoaat.png"></Image>
+        <Image Source="Assets/naziv.png" Margin="6,-243,-6,243"></Image>
+        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,356,-328,-412" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFF9F9FC" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
+        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,200,-328,-256" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFFCF9F9" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,142,-193,-192" Text="USERNAME:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,297,-193,-347" Text="PASSWORD:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
+        <Button Content="LOG IN" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="54,439,-271,-500" VerticalAlignment="Top" Width="217" Height="61" FontSize="30" Background="#FF6C6C6C"/>
+        <HyperlinkButton Content="Sign me up!!!" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="170,575,-368,-613" VerticalAlignment="Top" Foreground="#FF061BA6" FontSize="20" Height="38" Width="198"/>
+
 
     </Grid>
 </Page>
