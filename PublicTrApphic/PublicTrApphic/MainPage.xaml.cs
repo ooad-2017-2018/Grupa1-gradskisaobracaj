@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,5 +27,29 @@ namespace PublicTrApphic
         {
             this.InitializeComponent();
         }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SignUp));
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(tekstUsername.Text.Length==0 || tekstPassword.Text.Length==0)
+            {
+                var dialog = new MessageDialog("Niste unijeli username ili password!");
+                await dialog.ShowAsync();
+            }
+            //else if
+            else
+            {
+                tekstPassword.Text = "";
+                tekstUsername.Text = "";
+                BlinkPopup.Begin();
+                PopupTextBlock.Visibility = Visibility.Visible;
+            }
+        }
+
+
     }
 }

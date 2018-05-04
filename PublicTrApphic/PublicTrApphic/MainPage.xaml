@@ -7,37 +7,118 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF4490DC">
+    <Grid x:Name="MainGrid" Background="#FF4490DC" Margin="0,0,-444,0">
 
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="Wide">
+            <VisualStateGroup>
+                <VisualState x:Name="WideState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="800"/>
+                        <AdaptiveTrigger MinWindowWidth="1000" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-
+                        <Setter Target="MainGrid.RowDefinitions.Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions.Width" Value="auto"/>
+                        <Setter Target="tekstPassword.Margin" Value="700 200 -20 -100"/>
+                        <Setter Target="labelaPassword.Margin" Value="700 142 -20 -100"/>
+                        <Setter Target="tekstPassword.(Grid.Column)" Value="2"/>
+                        <Setter Target="tekstPassword.(Grid.Row)" Value="0"/>
+                        <Setter Target="labelaPassword.(Grid.Column)" Value="2"/>
+                        <Setter Target="labelaPassword.(Grid.Row)" Value="0"/>
+                        <Setter Target="dugmeLogin.Margin" Value="400 439 -100 -100"/>
+                        <Setter Target="dugmeLogin.(Grid.Column)" Value="1"/>
+                        <Setter Target="dugmeLogin.(Grid.Row)" Value="2"/>
+                        <Setter Target="hiperlinkSignUp.Margin" Value="700 600 -100 -100"/>
+                        <Setter Target="hiperlinkSignUp.(Grid.Column)" Value="2"/>
+                        <Setter Target="hiperlinkSignUp.(Grid.Row)" Value="2"/>
                     </VisualState.Setters>
                 </VisualState>
+
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.RowDefinitions.Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions.Width" Value="auto"/>
+                        <Setter Target="tekstPassword.(Grid.Column)" Value="0"/>
+                        <Setter Target="tekstPassword.(Grid.Row)" Value="1"/>
+                        <Setter Target="tekstPassword.Margin" Value="58 344 -329 -400"/>
+                        <Setter Target="labelaPassword.(Grid.Column)" Value="0"/>
+                        <Setter Target="labelaPassword.(Grid.Row)" Value="1"/>
+                        <Setter Target="labelaPassword.Margin" Value="24 290 -200 -368"/>
+                        <Setter Target="dugmeLogin.(Grid.Column)" Value="0"/>
+                        <Setter Target="dugmeLogin.(Grid.Row)" Value="2"/>
+                        <Setter Target="dugmeLogin.Margin" Value="54 467 -271 -528"/>
+                        <Setter Target="hiperlinkSignUp.(Grid.Column)" Value="0"/>
+                        <Setter Target="hiperlinkSignUp.(Grid.Row)" Value="2"/>
+                        <Setter Target="hiperlinkSignUp.Margin" Value="170 575 -368 -613"/>
+                    </VisualState.Setters>
+                </VisualState>
+
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="626"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="360"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="Assets/logoaat.png"></Image>
-        <Image Source="Assets/naziv.png" Margin="6,-243,-6,243"></Image>
-        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,356,-328,-412" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFF9F9FC" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
-        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,200,-328,-256" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFFCF9F9" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,142,-193,-192" Text="USERNAME:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,297,-193,-347" Text="PASSWORD:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
-        <Button Content="LOG IN" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="54,439,-271,-500" VerticalAlignment="Top" Width="217" Height="61" FontSize="30" Background="#FF6C6C6C"/>
-        <HyperlinkButton Content="Sign me up!!!" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="170,575,-368,-613" VerticalAlignment="Top" Foreground="#FF061BA6" FontSize="20" Height="38" Width="198"/>
 
+        <TextBox x:Name="tekstPassword" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="58,344,-329,-400" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFF9F9FC" SelectionHighlightColor="White" Foreground="Black" FontSize="35" Grid.RowSpan="3"/>
+        <TextBox x:Name="tekstUsername" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,200,-328,-256" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFFCF9F9" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
+        <TextBlock x:Name="labelaUsername" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,142,-193,-192" Text="USERNAME:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
+        <TextBlock x:Name="labelaPassword" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="24,318,-200,-368" Text="PASSWORD:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top" Grid.RowSpan="3"/>
+        <Button x:Name="dugmeLogin" Content="LOG IN" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" Margin="54,467,-271,-528" VerticalAlignment="Top" Width="217" Height="61" FontSize="30" Background="#FF6C6C6C" Click="Button_Click" Grid.ColumnSpan="2"/>
+        <HyperlinkButton x:Name="hiperlinkSignUp" Content="Sign me up!!!" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="170,575,-368,-613" VerticalAlignment="Top" Foreground="#FF061BA6" FontSize="20" Height="38" Width="198" Click="HyperlinkButton_Click"/>
 
+        <Border Name="popup" Width="400" VerticalAlignment="Center" Opacity="0" Visibility="Collapsed" HorizontalAlignment="Center" Background="Blue" CornerRadius="10">
+            <TextBlock x:Name="PopupTextBlock" TextWrapping="Wrap" Foreground="White" Text="DOBRODOŠLI!" FontSize="32" VerticalAlignment="Center" TextAlignment="Center" Margin="20" />
+        </Border>
+
+        <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="14,30,-346,-84" Grid.Row="0" Text="PUBLIC TRAPPHIC" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="332" FontSize="36" FontWeight="Bold" FontFamily="Forte">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0606FF" Offset="0.706"/>
+                    <GradientStop Color="#FF0575FB" Offset="0.979"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
     </Grid>
+
+    <Page.Resources>
+        <Storyboard x:Name="BlinkPopup">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="popup">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:5">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:10">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="popup">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
 </Page>

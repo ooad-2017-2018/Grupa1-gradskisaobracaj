@@ -92,15 +92,20 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="Aplikacija.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="IntroForma.xaml.cs">
       <DependentUpon>IntroForma.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Korisnik.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Nezaposlen.cs" />
+    <Compile Include="Penzioner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
@@ -108,6 +113,9 @@
     <Compile Include="SignUp2.xaml.cs">
       <DependentUpon>SignUp2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
+    <Compile Include="Uloga.cs" />
+    <Compile Include="Zaposlen.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

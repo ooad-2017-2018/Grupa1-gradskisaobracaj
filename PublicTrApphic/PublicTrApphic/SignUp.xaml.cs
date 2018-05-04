@@ -26,5 +26,10 @@ namespace PublicTrApphic
         {
             this.InitializeComponent();
         }
+
+        private void Image_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SignUp2));
+        }
     }
 }
