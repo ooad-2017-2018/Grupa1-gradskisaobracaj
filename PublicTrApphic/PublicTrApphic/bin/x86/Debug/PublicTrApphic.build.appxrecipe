@@ -370,11 +370,23 @@
     <AppxPackagedFile Include="C:\Users\Tarek Shahin\.nuget\packages\system.xml.xmlserializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\bus.png">
+      <PackagePath>Assets\bus.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\dalje.png">
+      <PackagePath>Assets\dalje.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\logoaat.png">
       <PackagePath>Assets\logoaat.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\naziv.png">
       <PackagePath>Assets\naziv.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\next_back.png">
+      <PackagePath>Assets\next_back.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\trola.png">
+      <PackagePath>Assets\trola.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

@@ -21,8 +21,8 @@
         <Image Source="Assets/bus.png" Margin="-37,-196,-32,54"></Image>
         <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,143,0,0" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
         <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,197,0,0" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="75,152,0,0" Text="IME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" FocusVisualPrimaryBrush="#FFDFEE0E" Foreground="#FFF0FB04" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,202,0,0" Text="PREZIME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" FocusVisualPrimaryBrush="#FFDFEE0E" Foreground="#FFF0FB04" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="75,152,0,0" Text="IME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,202,0,0" Text="PREZIME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
         <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="52,405,0,0" VerticalAlignment="Top" Width="37" Height="36"/>
         <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="117,405,0,0" VerticalAlignment="Top" Width="37" Height="36"/>
         <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="182,405,0,0" VerticalAlignment="Top" Width="37" Height="36"/>
@@ -31,6 +31,6 @@
         <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="84,447,0,0" Text="Penzioner" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="160,449,0,0" Text="Zaposlen" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="230,449,0,0" Text="Nezaposlen" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
-        <Image Source="Assets/dalje.png" Margin="128,439,118,-61"></Image>
+        <Image Source="Assets/dalje.png" Margin="128,439,118,-61" DoubleTapped="Image_DoubleTapped"></Image>
     </Grid>
 </Page>
