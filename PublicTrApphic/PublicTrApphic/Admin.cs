@@ -8,7 +8,7 @@ namespace PublicTrApphic
 {
     public class Admin : Uloga
     {
-        public Admin(string username, string password) : base(username, password)
+        public Admin() : base()
         {
         }
     }

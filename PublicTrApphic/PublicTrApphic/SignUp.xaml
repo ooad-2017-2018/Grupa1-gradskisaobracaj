@@ -7,30 +7,96 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF4490DC">
+    <Grid x:Name="MainGrid" Background="#FF4490DC">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="626"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="360"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="Assets/naziv.png" Margin="6,-243,-6,243"></Image>
-        <Image Source="Assets/trola.png" Margin="-4,67,-14,-64"></Image>
-        <Image Source="Assets/bus.png" Margin="-37,-196,-32,54"></Image>
-        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,143,0,0" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
-        <TextBox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,197,0,0" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="75,152,0,0" Text="IME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,202,0,0" Text="PREZIME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
-        <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="52,405,0,0" VerticalAlignment="Top" Width="37" Height="36"/>
-        <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="117,405,0,0" VerticalAlignment="Top" Width="37" Height="36"/>
-        <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="182,405,0,0" VerticalAlignment="Top" Width="37" Height="36"/>
-        <RadioButton Content="" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="250,405,-10,0" VerticalAlignment="Top" Width="37" Height="36"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="22,447,0,0" Text="Student" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="84,447,0,0" Text="Penzioner" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="160,449,0,0" Text="Zaposlen" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="230,449,0,0" Text="Nezaposlen" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" Foreground="#FFF9D808" FontWeight="Bold"/>
-        <Image Source="Assets/dalje.png" Margin="128,439,118,-61" DoubleTapped="Image_DoubleTapped"></Image>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.RowDefinitions.Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions.Width" Value="auto"/>
+                        <Setter Target="radiobStudent.(Grid.Column)" Value="1"/>
+                        <Setter Target="radiobStudent.(Grid.Row)" Value="0"/>
+                        <Setter Target="radiobStudent.Margin" Value="200 143 0 0"/>
+                        <Setter Target="radiobPenzioner.(Grid.Column)" Value="1"/>
+                        <Setter Target="radiobPenzioner.(Grid.Row)" Value="0"/>
+                        <Setter Target="radiobPenzioner.Margin" Value="200 184 0 0"/>
+                        <Setter Target="radiobZaposlen.(Grid.Column)" Value="1"/>
+                        <Setter Target="radiobZaposlen.(Grid.Row)" Value="0"/>
+                        <Setter Target="radiobZaposlen.Margin" Value="200 225 0 0"/>
+                        <Setter Target="radiobNezaposlen.(Grid.Column)" Value="1"/>
+                        <Setter Target="radiobNezaposlen.(Grid.Row)" Value="0"/>
+                        <Setter Target="radiobNezaposlen.Margin" Value="200 266 0 0"/>
+                        <Setter Target="labelaStudent.(Grid.Column)" Value="1"/>
+                        <Setter Target="labelaStudent.(Grid.Row)" Value="0"/>
+                        <Setter Target="labelaStudent.Margin" Value="246 141 0 0"/>
+                        <Setter Target="labelaPenzioner.(Grid.Column)" Value="1"/>
+                        <Setter Target="labelaPenzioner.(Grid.Row)" Value="0"/>
+                        <Setter Target="labelaPenzioner.Margin" Value="246 184 0 0"/>
+                        <Setter Target="labelaZaposlen.(Grid.Column)" Value="1"/>
+                        <Setter Target="labelaZaposlen.(Grid.Row)" Value="0"/>
+                        <Setter Target="labelaZaposlen.Margin" Value="246 227 0 0"/>
+                        <Setter Target="labelaNezaposlen.(Grid.Column)" Value="1"/>
+                        <Setter Target="labelaNezaposlen.(Grid.Row)" Value="0"/>
+                        <Setter Target="labelaNezaposlen.Margin" Value="246 270 0 0"/>
+                        <Setter Target="dugmeDalje.(Grid.Column)" Value="1"/>
+                        <Setter Target="dugmeDalje.(Grid.Row)" Value="1"/>
+                        <Setter Target="dugmeDalje.Margin" Value="200 150 118 -61"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.RowDefinitions.Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions.Width" Value="auto"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="17,46,-349,-100" Grid.Row="0" Grid.Column="0" Text="PUBLIC TRAPPHIC" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="332" FontSize="36" FontWeight="Bold" FontFamily="Forte">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0606FF" Offset="0.706"/>
+                    <GradientStop Color="#FF0575FB" Offset="0.979"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBox x:Name="tekstIme" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,143,0,0" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
+        <TextBox x:Name="tekstPrezime" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,197,0,0" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
+        <TextBlock x:Name="labelaIme" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="75,152,0,0" Text="IME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
+        <TextBlock x:Name="labelaPrezime" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,202,0,0" Text="PREZIME:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
+        <RadioButton x:Name="radiobStudent" Content="" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="90,83,-210,-119" VerticalAlignment="Top" Width="37" Height="36" Grid.ColumnSpan="2"/>
+        <RadioButton x:Name="radiobPenzioner" Content="" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="90,124,-210,-160" VerticalAlignment="Top" Width="37" Height="36" FontSize="24" Grid.ColumnSpan="2"/>
+        <RadioButton x:Name="radiobZaposlen" Content="" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="90,165,-210,-201" VerticalAlignment="Top" Width="37" Height="36" Grid.ColumnSpan="2"/>
+        <RadioButton x:Name="radiobNezaposlen" Content="" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="90,206,-210,-242" VerticalAlignment="Top" Width="37" Height="36" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="labelaStudent" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="136,81,-260,-117" Text="Student" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Foreground="#FFF9D808" FontWeight="Bold" Height="36" Width="124" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="labelaPenzioner" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="136,124,-248,-156" Text="Penzioner" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Foreground="#FFF9D808" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="labelaZaposlen" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="136,167,-238,-199" Text="Zaposlen" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Foreground="#FFF9D808" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="labelaNezaposlen" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="136,210,-267,-242" Text="Nezaposlen" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Foreground="#FFF9D808" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button x:Name="dugmeDalje" Grid.Row="1" Grid.Column="0" Margin="110,250,118,-61" Click="dugmeDalje_Click">
+            <StackPanel>
+                <Image Source="Assets/dalje.png"></Image>
+            </StackPanel>
+        </Button>
+        <TextBox x:Name="tekstJMBG" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="136,251,-349,-296" Text="" VerticalAlignment="Top" Height="45" Width="213" FontSize="30" Background="#FFF7F7FC"/>
+        <TextBlock x:Name="labelaJMBG" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="53,258,-129,-291" Text="JMBG:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF0FB04" FontWeight="Bold"/>
     </Grid>
 </Page>

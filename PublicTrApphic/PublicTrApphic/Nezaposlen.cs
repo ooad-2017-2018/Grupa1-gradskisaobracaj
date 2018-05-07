@@ -10,8 +10,8 @@ namespace PublicTrApphic
     {
         int idKnjizice;
 
-        public Nezaposlen(string ime, string prezime, string telefon, string username, string password, string jmbg, int idKnjizice) 
-            : base(ime, prezime, telefon, username, password, jmbg)
+        public Nezaposlen(string ime, string prezime, string telefon, string jmbg, int idKnjizice) 
+            : base(ime, prezime, telefon, jmbg)
         {
             IdKnjizice = idKnjizice;
         }

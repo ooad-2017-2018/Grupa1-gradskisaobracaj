@@ -23,14 +23,27 @@ namespace PublicTrApphic
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public Aplikacija aplikacija = new Aplikacija();
+        public static int brojac=0;
+
         public MainPage()
         {
             this.InitializeComponent();
+            brojac++;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            if (brojac != 1)
+            {
+                aplikacija = (Aplikacija)e.Parameter;
+            }
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SignUp));
+            this.Frame.Navigate(typeof(SignUp), aplikacija);
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -40,16 +53,40 @@ namespace PublicTrApphic
                 var dialog = new MessageDialog("Niste unijeli username ili password!");
                 await dialog.ShowAsync();
             }
-            //else if
             else
             {
-                tekstPassword.Text = "";
-                tekstUsername.Text = "";
-                BlinkPopup.Begin();
-                PopupTextBlock.Visibility = Visibility.Visible;
+                if (aplikacija.korisnici.Capacity == 0)
+                {
+                    var dialog = new MessageDialog("NIJE UNESEN NIJEDAN KORISNIK!");
+                    await dialog.ShowAsync();
+                    tekstPassword.Text = "";
+                    tekstUsername.Text = "";
+                }
+                else
+                {
+                    Korisnik user = (Korisnik)aplikacija.korisnici.Find(k => k.Username.Equals(tekstUsername.Text));
+                    if (user.Password == tekstPassword.Text)
+                    {
+                        var dialog = new MessageDialog("DOBRODOŠLI " + user.Username + "!");
+                        await dialog.ShowAsync();
+                        tekstPassword.Text = "";
+                        tekstUsername.Text = "";
+                    }
+                    else if (user.Password != tekstPassword.Text)
+                    {
+                        var dialog = new MessageDialog("Password je netačan!");
+                        await dialog.ShowAsync();
+                        tekstPassword.Text = "";
+                    }
+                    else
+                    {
+                        var dialog = new MessageDialog("Korisnik ne postoji!");
+                        await dialog.ShowAsync();
+                        tekstPassword.Text = "";
+                        tekstUsername.Text = "";
+                    }
+                }
             }
         }
-
-
     }
 }

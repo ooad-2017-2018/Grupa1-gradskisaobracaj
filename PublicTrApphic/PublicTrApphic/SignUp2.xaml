@@ -7,38 +7,101 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF4490DC">
-        
+    <Grid x:Name="MainGrid" Background="#FF4490DC">
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="626"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="360"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        
-        <Image Source="Assets/dalje.png" Margin="15,-14,250,498" RenderTransformOrigin="0.5,0.5" DoubleTapped="Image_DoubleTapped">
-            <Image.RenderTransform>
-                <CompositeTransform Rotation="180"/>
-            </Image.RenderTransform>
-        </Image>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.RowDefinitions.Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions.Width" Value="auto"/>
+                        <Setter Target="dugmeNazad.Margin" Value="11 -450 0 0"/>
+                        <Setter Target="dugmeNazad.(Grid.Column)" Value="0"/>
+                        <Setter Target="dugmeNazad.(Grid.Row)" Value="0"/>
+                        <Setter Target="tekstDodatni1.Margin" Value="40 405 0 0"/>
+                        <Setter Target="tekstDodatni1.(Grid.Column)" Value="1"/>
+                        <Setter Target="tekstDodatni1.(Grid.Row)" Value="0"/>
+                        <Setter Target="tekstDodatni2.Margin" Value="205 405 0 0"/>
+                        <Setter Target="tekstDodatni2.(Grid.Column)" Value="1"/>
+                        <Setter Target="tekstDodatni2.(Grid.Row)" Value="0"/>
+                        <Setter Target="labela1.Margin" Value="40 382 0 0"/>
+                        <Setter Target="labela1.(Grid.Column)" Value="1"/>
+                        <Setter Target="labela1.(Grid.Row)" Value="0"/>
+                        <Setter Target="labela2.Margin" Value="205 382 0 0"/>
+                        <Setter Target="labela2.(Grid.Column)" Value="1"/>
+                        <Setter Target="labela2.(Grid.Row)" Value="0"/>
+                        <Setter Target="TekstBroj.(Grid.Column)" Value="0"/>
+                        <Setter Target="TekstBroj.(Grid.Row)" Value="0"/>
+                        <Setter Target="TekstBroj.Margin" Value="25 405 0 0"/>
+                        <Setter Target="slikaLicne.(Grid.Column)" Value="1"/>
+                        <Setter Target="slikaLicne.(Grid.Row)" Value="0"/>
+                        <Setter Target="slikaLicne.Margin" Value="75 153 0 0"/>
+                        <Setter Target="dugmeDokument.(Grid.Column)" Value="1"/>
+                        <Setter Target="dugmeDokument.(Grid.Row)" Value="0"/>
+                        <Setter Target="dugmeDokument.Margin" Value="110 305 0 0"/>
+                        <Setter Target="dugmeSignup.(Grid.Column)" Value="1"/>
+                        <Setter Target="dugmeSignup.(Grid.Row)" Value="0"/>
+                        <Setter Target="dugmeSignup.Margin" Value="180 520 0 0"/>
+                        <Setter Target="okvir.(Grid.Column)" Value="1"/>
+                        <Setter Target="okvir.(Grid.Row)" Value="0"/>
+                        <Setter Target="okvir.Margin" Value="75 153 0 0"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.RowDefinitions.Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions.Width" Value="auto"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Button x:Name="dugmeNazad" Grid.Row="0" Grid.Column="0" Margin="11,-270,0,0" Click="dugmeNazad_Click" Grid.ColumnSpan="2" Height="95" Width="103">
+            <StackPanel>
+                <Image Source="Assets/dalje.png" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </StackPanel>
+        </Button>
         <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="122,17,-30,0" Text="UNOS PODATAKA" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="268" FontWeight="Bold" FontFamily="Cooper Std Black" Foreground="#FFFF0606"/>
         <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,114,-43,0" Text="Unesi broj mobitela:" FontSize="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" FontWeight="Bold" FontFamily="Cooper Std Black" Foreground="#FFFFDD06"/>
-        <Button Content="1" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,153,0,0" VerticalAlignment="Top" Height="48" Width="44" Background="#FF050505" Foreground="#FFFDFBFB" FontWeight="Bold" Click="Button_Click"/>
-        <Button Content="2" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,153,0,0" VerticalAlignment="Top" Height="48" Width="44" Background="#FF070707" Foreground="#FFFDFBFB" FontWeight="Bold" Click="Button_Click_1"/>
-        <Button Content="3" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,153,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_2"/>
-        <Button Content="4" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFDFBFB" Click="Button_Click_3"/>
-        <Button Content="5" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFDFBFB" Click="Button_Click_4"/>
-        <Button Content="6" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFBF9F9" Click="Button_Click_5"/>
-        <Button Content="7" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_6"/>
-        <Button Content="8" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_7"/>
-        <Button Content="9" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_8"/>
-        <Button Content="0" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,342,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_9"/>
-        <Button Content="Del" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,342,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFBF9F9" Click="Button_Click_10"/>
+        <Button x:Name="dugme1" Content="1" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,153,0,0" VerticalAlignment="Top" Height="48" Width="44" Background="#FF050505" Foreground="#FFFDFBFB" FontWeight="Bold" Click="Button_Click"/>
+        <Button x:Name="dugme2" Content="2" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,153,0,0" VerticalAlignment="Top" Height="48" Width="44" Background="#FF070707" Foreground="#FFFDFBFB" FontWeight="Bold" Click="Button_Click_1"/>
+        <Button x:Name="dugme3" Content="3" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,153,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_2"/>
+        <Button x:Name="dugme4" Content="4" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFDFBFB" Click="Button_Click_3"/>
+        <Button x:Name="dugme5" Content="5" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFDFBFB" Click="Button_Click_4"/>
+        <Button x:Name="dugme6" Content="6" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,216,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFBF9F9" Click="Button_Click_5"/>
+        <Button x:Name="dugme7" Content="7" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_6"/>
+        <Button x:Name="dugme8" Content="8" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_7"/>
+        <Button x:Name="dugme9" Content="9" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="140,279,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_8"/>
+        <Button x:Name="dugme0" Content="0" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="83,342,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF030303" Foreground="#FFFDFBFB" Click="Button_Click_9"/>
+        <Button x:Name="dugmeDel" Content="Del" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="25,342,0,0" VerticalAlignment="Top" Height="48" Width="44" FontWeight="Bold" Background="#FF050505" Foreground="#FFFBF9F9" Click="Button_Click_10"/>
         <TextBox x:Name="TekstBroj" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="135,341,0,0" Text="" VerticalAlignment="Top" Height="50" Width="206" FontSize="30" Background="#FFFDFBFB" FontWeight="Bold" FontStyle="Italic" IsReadOnly="True"/>
-        <Image x:Name="slikaLicne" HorizontalAlignment="Left" Height="114" Grid.Row="0" Grid.Column="0" Margin="60,404,0,0" VerticalAlignment="Top" Width="230" Visibility="Visible" Stretch="Fill"/>
-        <Button Content="Slika lične.." HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="130,533,0,0" VerticalAlignment="Top" FontSize="15" Background="#FFB1B1B1" Height="35" Width="89" Click="Button_Click_11"/>
-        <Button Content="SIGN UP" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="220,578,0,0" FontSize="25" VerticalAlignment="Top" Height="50" Width="117" Background="#FFACACAC" FontWeight="Bold" Click="Button_Click_12"/>
-        <Rectangle HorizontalAlignment="Left" Height="116" Grid.Row="0" Grid.Column="0" Margin="60,404,0,0" VerticalAlignment="Top" Width="233" Stroke="#FF040404" StrokeThickness="5" Stretch="Fill"/>
-
+        <Image x:Name="slikaLicne" HorizontalAlignment="Left" Height="114" Grid.Row="0" Grid.Column="0" Margin="66,459,-296,-573" VerticalAlignment="Top" Width="230" Visibility="Visible" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button x:Name="dugmeDokument" Content="Priloži dokument" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="31,580,-184,-630" VerticalAlignment="Top" FontSize="15" Background="#FFB1B1B1" Height="50" Width="153" Click="Button_Click_11" Grid.ColumnSpan="2" Grid.RowSpan="2" FontWeight="Bold"/>
+        <Button x:Name="dugmeSignup" Content="SIGN UP" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="210,580,-341,-630" FontSize="25" VerticalAlignment="Top" Height="50" Width="131" Background="#FFACACAC" FontWeight="Bold" Click="Button_Click_12"/>
+        <Rectangle x:Name="okvir" HorizontalAlignment="Left" Height="116" Grid.Row="0" Grid.Column="0" Margin="66,459,-299,-575" VerticalAlignment="Top" Width="233" Stroke="#FF040404" StrokeThickness="5" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="tekstDodatni1" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,418,-153,-454" Text="" VerticalAlignment="Top" Height="36" Width="136" FontSize="20" Background="#FFFDFBFB" FontWeight="Bold" FontStyle="Italic" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="tekstDodatni2" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="176,418,-346,-454" Text="" VerticalAlignment="Top" Height="36" Width="170" FontSize="20" Background="#FFFDFBFB" FontWeight="Bold" FontStyle="Italic" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBlock x:Name="labela1" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,395,-191,-419" Text="tekst:" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontFamily="Cooper Std Black" Foreground="#FFFFDD06" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBlock x:Name="labela2" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="176,396,-346,-425" Text="tekst:" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" FontWeight="Bold" FontFamily="Cooper Std Black" Foreground="#FFFFDD06" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="29"/>
     </Grid>
 </Page>

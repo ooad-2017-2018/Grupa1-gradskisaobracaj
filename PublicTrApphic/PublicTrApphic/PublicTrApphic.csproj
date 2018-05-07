@@ -113,6 +113,7 @@
     <Compile Include="SignUp2.xaml.cs">
       <DependentUpon>SignUp2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SignupParams.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Uloga.cs" />
     <Compile Include="Zaposlen.cs" />

@@ -22,14 +22,35 @@ namespace PublicTrApphic
     /// </summary>
     public sealed partial class SignUp : Page
     {
+        public string ime="";
+        public string prezime="";
+        public string jmbg="";
+        public int opcija=0;
+        public Aplikacija aplikacija;
+
         public SignUp()
         {
             this.InitializeComponent();
         }
 
-        private void Image_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(SignUp2));
+            base.OnNavigatedTo(e);
+            aplikacija = (Aplikacija)e.Parameter;
+        }
+    
+    private void dugmeDalje_Click(object sender, RoutedEventArgs e)
+        {
+            ime = tekstIme.Text;
+            prezime = tekstPrezime.Text;
+            jmbg = tekstJMBG.Text;
+            if (radiobStudent.IsChecked == true) opcija = 1;
+            else if (radiobPenzioner.IsChecked == true) opcija = 2;
+            else if (radiobZaposlen.IsChecked == true) opcija = 3;
+            else if (radiobNezaposlen.IsChecked == true) opcija = 4;
+            else opcija = 0;
+            SignupParams parametri = new SignupParams(ime, prezime, jmbg, opcija, aplikacija);
+            this.Frame.Navigate(typeof(SignUp2), parametri);
         }
     }
 }

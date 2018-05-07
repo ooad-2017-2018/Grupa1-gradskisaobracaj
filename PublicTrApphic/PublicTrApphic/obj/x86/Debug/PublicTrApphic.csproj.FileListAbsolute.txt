@@ -226,3 +226,4 @@ C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApph
 C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\bin\x86\Debug\IntroForma.xbf
 C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\bin\x86\Debug\SignUp.xbf
 C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\bin\x86\Debug\SignUp2.xbf
+C:\Users\Tarek Shahin\Desktop\projekat ooad\gradskisaobracajusecase\PublicTrApphic\PublicTrApphic\obj\x86\Debug\PublicTrApphic.csproj.CopyComplete

@@ -7,11 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="MainGrid" Background="#FF4490DC" Margin="0,0,-444,0">
+    <Grid x:ConnectionId='1' x:Name="MainGrid" Background="#FF4490DC" Margin="0,0,-444,0">
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
-                <VisualState x:Name="WideState">
+                <VisualState x:ConnectionId='2' x:Name="WideState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1000" />
                     </VisualState.StateTriggers>
@@ -33,7 +33,7 @@
                     </VisualState.Setters>
                 </VisualState>
 
-                <VisualState x:Name="NarrowState">
+                <VisualState x:ConnectionId='3' x:Name="NarrowState">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="500"/>
                     </VisualState.StateTriggers>
@@ -73,12 +73,12 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBox x:Name="tekstPassword" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="58,344,-329,-400" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFF9F9FC" SelectionHighlightColor="White" Foreground="Black" FontSize="35" Grid.RowSpan="3"/>
-        <TextBox x:Name="tekstUsername" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,200,-328,-256" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFFCF9F9" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
-        <TextBlock x:Name="labelaUsername" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,142,-193,-192" Text="USERNAME:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
-        <TextBlock x:Name="labelaPassword" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="24,318,-200,-368" Text="PASSWORD:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top" Grid.RowSpan="3"/>
-        <Button x:Name="dugmeLogin" Content="LOG IN" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" Margin="54,467,-271,-528" VerticalAlignment="Top" Width="217" Height="61" FontSize="30" Background="#FF6C6C6C" Click="Button_Click" Grid.ColumnSpan="2"/>
-        <HyperlinkButton x:Name="hiperlinkSignUp" Content="Sign me up!!!" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="170,575,-368,-613" VerticalAlignment="Top" Foreground="#FF061BA6" FontSize="20" Height="38" Width="198" Click="HyperlinkButton_Click"/>
+        <TextBox x:ConnectionId='4' x:Name="tekstPassword" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="58,344,-329,-400" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFF9F9FC" SelectionHighlightColor="White" Foreground="Black" FontSize="35" Grid.RowSpan="3"/>
+        <TextBox x:ConnectionId='5' x:Name="tekstUsername" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="57,200,-328,-256" Text="" VerticalAlignment="Top" Width="271" Height="56"  Background="#FFFCF9F9" SelectionHighlightColor="White" Foreground="Black" FontSize="35"/>
+        <TextBlock x:ConnectionId='6' x:Name="labelaUsername" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="17,142,-193,-192" Text="USERNAME:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='7' x:Name="labelaPassword" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Margin="24,318,-200,-368" Text="PASSWORD:" TextWrapping="Wrap" Width="176" Height="50" FontSize="30" VerticalAlignment="Top" Grid.RowSpan="3"/>
+        <Button x:ConnectionId='8' x:Name="dugmeLogin" Content="LOG IN" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" Margin="54,467,-271,-528" VerticalAlignment="Top" Width="217" Height="61" FontSize="30" Background="#FF6C6C6C"                      Grid.ColumnSpan="2"/>
+        <HyperlinkButton x:ConnectionId='9' x:Name="hiperlinkSignUp" Content="Sign me up!!!" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="170,575,-368,-613" VerticalAlignment="Top" Foreground="#FF061BA6" FontSize="20" Height="38" Width="198"                              />
 
         <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="14,30,-346,-84" Grid.Row="0" Text="PUBLIC TRAPPHIC" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="332" FontSize="36" FontWeight="Bold" FontFamily="Forte">
             <TextBlock.Foreground>
@@ -92,7 +92,7 @@
     </Grid>
 
     <Page.Resources>
-        <Storyboard x:Name="BlinkPopup">
+        <Storyboard x:ConnectionId='10' x:Name="BlinkPopup">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="popup">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
                     <DiscreteObjectKeyFrame.Value>
@@ -119,3 +119,4 @@
     </Page.Resources>
 
 </Page>
+

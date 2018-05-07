@@ -12,8 +12,7 @@ namespace PublicTrApphic
         string password;
 
         public Uloga()
-        {
-            
+        {            
         }
 
         public string Username { get => username; set => username = value; }

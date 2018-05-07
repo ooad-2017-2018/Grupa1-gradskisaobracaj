@@ -11,8 +11,8 @@ namespace PublicTrApphic
         int index;
         string nazivFakulteta;
 
-        public Student(string ime, string prezime, string telefon, string username, string password, string jmbg, int index, string nazivFakulteta) 
-            : base(ime, prezime, telefon, username, password, jmbg)
+        public Student(string ime, string prezime, string telefon, string jmbg, int index, string nazivFakulteta) 
+            : base(ime, prezime, telefon, jmbg)
         {
             Index = index;
             NazivFakulteta = nazivFakulteta;
