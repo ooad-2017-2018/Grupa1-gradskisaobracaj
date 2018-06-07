@@ -1,0 +1,61 @@
+TAREK-A. CHAHIN
+
+1.FACADE PATTERN
+Koristi se kada sistem ima više identificiranih podsistema pri 
+èemu su apstrakcije i implementacije podsistema usko povezane. Namjena mu je da 
+osigura više pogleda visokog nivoa na podsisteme(implementacija im je skrivena od
+korisnika).
+Ovaj pattern kod nas nigdje nije iskorišten ali kako koristimo puno podsistema tj.
+npr. korisnika i karata èije su implementacije usko povezane lahko bi mogli 
+ovaj pattern iskoristiti da izmeðu ostalog sakrijemo njihovu implementaciju od 
+korisnika.
+
+2.DECORATOR PATTERN
+Koristi se da omoguæi dinamièko dodavanje novih elemenata i funkcionalnosti 
+postojeæim objektima i pri tome objekat ne zna da je uraðena dekoracija što je 
+veoma korisno za iskoristljivost i ponovnu upotrebu komponenti softverskog 
+sistema.
+Pattern bismo mogli u našoj aplikaciji implementirati kod kupovine karata gdje bi 
+uvijek moglo nešto novo da se doda, npr. neka nova funkcionalnost, dinamièki, 
+bez da poremetimo rad trenutne verzije aplikacije.
+
+3.FLYWEIGHT PATTERN
+Koristi se kada želimo da više razlièitih objekata dijele isto glavno stanje
+(intrinsic state) tj. dio klase koji je uvijek isti za sve odreðene objekte te klase,
+a imaju razlièito sporedno stanje(extrinsic state) tj. dio klase koji nije uvijek
+isti.
+Ni ovaj pattern nismo nigdje iskoristili iako je veoma pogodan za kupovinu karata,
+jer on ima dio koji je uvijek isti za sve kupce, npr. odabir karata i sl.
+dok je razlièit obraèun popust kod njih.
+
+
+
+SEFER BEŠIROVIÆ
+
+1.ADAPTER PATTERN
+Koristi se u situacijama kada je potreban drugaèiji interfejs veæ postojeæe klase,
+a ne želimo mijenjati postojeæu klasu. On kreira novu adapter klasu koja služi
+kao posrednik izmeðu originalne klase i željenog interfejsa èime se dobija željena
+funkcionalnost bez izmjena na postojeæoj klasi i bez ugrožavanja integriteta
+aplikacije.
+Ovaj pattern nismo iskoristili u našoj aplikaciji. Pattern je ipak pogodan za 
+implementaciju u našoj aplikaciji, jer ovakvi tipovi aplikacije su uvijek podložne 
+nekim promjenama, bilo minornim ili nekim veæim, koje treba adaptirati sa starijom
+"verzijom".
+
+2.SINGLETON PATTERN
+Uloga mu je da osigura da se klasa može instancirati samo jednom i da osigura
+globalni pristup kreiranoj instanci klase.
+Pattern je jako poželjno koristiti, ne samo u našoj konkretnoj aplikaciji, nego 
+opæenito kad radimo sa nitima pri radu sa bazom podataka, ili ako imamo neku klasu
+koja objedinjuje sve "podklase" tzv. kontejnerska klasa koja èuva informacije
+o svim kartama, kupcima, i sl. Tada sigurno želimo da imamo samo jednu instancu te 
+klase.
+
+3.OBSERVER PATTERN
+Uloga mu je da uspostavi relaciju izmeðu objekata tako da kada jedan objekat promijeni
+svoje stanje, drugi zainteresirani objekti se obavještavaju.
+Ovaj pattern, u biti, smo svi na neki naèin, nesvjesno, koristili. Npr. kod Button-a
+uvijek implementiramo event Click, koji nas obavještava kada je dugme pritisnuto i na taj
+naèin znamo da tada moramo obaviti odreðene akcije.
+  
